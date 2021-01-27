@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .num,
+        .action {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #number div {
+            flex: 1 0 32%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #number div,
+        #action div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: solid .2px #ccc;
+        }
+
+        #number div {
+            height: 50px;
+        }
+
+        #action div {
+            flex: 1 0 100%;
+        }
+
+        #result {
+            height: 70px;
+            width: 100%;
+            background-color: #f5f5f5;
+        }
+
+        .control {
+            display: flex;
+        }
+
+        .c-left {
+            flex: 2;
+        }
+
+        #number {
+            flex: 4;
+        }
+
+        #keyboard {
+            display: flex;
+        }
+
+        .c-right,
+        #action {
+            flex: 1;
+            flex-wrap: wrap;
+        }
+
+        #result {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            word-break: break-all;
+        }
+
+        ul {
+            text-align: right;
+            list-style: none;
+        }
+
+        .act-number {
+            color: #bbb;
+        }
+
+        .result-number {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        i {
+            display: inline-block;
+            cursor: pointer;
+            float: left;
+            margin-top: 10px;
+        }
+    </style>
+    <div class="group">
+        <div class="control">
+            <div class="c-left">
+                <div id="result">
+                </div>
+                <div id="keyboard">
+                    <div class="num" id="number">
+
+                    </div>
+                    <div class="action" id="action">
+
+                    </div>
+                </div>
+            </div>
+            <div class="c-right">
+                <span>History</span><br />
+                <div id="history">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" onkeydown="key(event)">
+    <p id="as"></p>
+    <script>
+        let isAct = false;
+        function appendHTML(id, content) {
+            document.getElementById(id).innerHTML = content;
+        }
+        function clearHTML(action) {
+            switch (action) {
+                case "one":
+                    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML.slice(0, -1);
+                    if (isAct) {
+                        isAct = false;
+                    }
+                    break;
+                case "result":
+                    appendHTML("result", ""); break;
+                case "sqrt":
+                    calculator();
+                    var st = document.getElementById("result").textContent;
+                    var number = parseInt(st);
+                    document.getElementById("result").innerHTML = Math.sqrt(number);
+                    break;
+                case "pr": calculator();
+                    var st = document.getElementById("result").textContent;
+                    var number = parseInt(st);
+                    document.getElementById("result").innerHTML = number / 100;
+                    break;
+                    break;
+                case "x": calculator();
+                    var st = document.getElementById("result").textContent;
+                    var number = parseInt(st);
+                    document.getElementById("result").innerHTML = number * number;
+                    break;
+                default:
+                    appendHTML("result", "");
+                    appendHTML("history", "");
+                    localStorage.setItem("database", JSON.stringify([])); break;
+            }
+        }
+        function init() {
+            var num = "";
+            num += "<div style='order: -5' onclick=" + "clearHTML('one')" + ">CC</div>" +
+                "<div style='order: -4' onclick=" + "clearHTML('result')" + ">CE</div>" +
+                "<div style='order: -3' onclick=" + "clearHTML('all')" + ">C</div>" +
+                "<div style='order: -2' onclick=" + "clearHTML('sqrt')" + ">√</div>"
+                +
+                "<div style='order: -1' onclick=" + "clearHTML('pr')" + ">%</div>"
+                +
+                "<div style='order: -1' onclick=" + "clearHTML('x')" + ">x^2</div>"
+                ;
+            for (var i = 0; i < 10; i++) {
+                num += "<div style='order: " + (i < 1 ? 10 : i) + "  onkeydown='key(event)' ' onclick='pressKey(" + i + ")'>" + i + "</div>";
+            }
+
+            appendHTML("number", num);
+            appendHTML("action", "<div onclick=" + "pressKey('.')" + ">.</div><div onclick=" + "pressKey('*')" + ">*</div><div onclick=" + "pressKey('/')" + ">/</div><div onclick=" + "pressKey('-')" + ">-</div><div onclick=" + "pressKey('+')" + ">+</div><div onclick='calculator()'>=</div>");
+        }
+        function pressKey(number) {
+            var isNotNum = isNaN(number);
+            if (isNotNum) {
+                if (isAct) {
+                    appendHTML("result", document.getElementById("result").innerHTML.slice(0, -1) + number);
+                } else {
+                    isAct = true;
+                    appendHTML("result", document.getElementById("result").innerHTML + number);
+                }
+                return false;
+            }
+            isAct = false;
+            appendHTML("result", document.getElementById("result").innerHTML + number);
+        }
+        function calculator() {
+            var s = document.getElementById("result").textContent;
+            var check = s.split("/");
+            if (check[1] == "0") {
+                alert("no no no");
+                document.getElementById("result").innerHTML = "0";
+                return true;
+            } else {
+                var obj = {
+                    act: document.getElementById("result").innerText + "="
+                };
+
+                if (isAct) {
+                    document.getElementById("result").innerHTML = eval(document.getElementById("result").innerHTML.slice(0, -1));
+                } else {
+
+                    document.getElementById("result").innerHTML = eval(document.getElementById("result").innerHTML);
+                }
+                obj.result = eval(document.getElementById("result").innerText);
+            }
+            setHistory(obj);
+            showHistory();
+            return false;
+        }
+        function setHistory(obj) {
+            var localS = localStorage.getItem("database");
+            if (localS == null) {
+                localStorage.setItem("database", JSON.stringify([obj]));
+            } else {
+                var current = JSON.parse(localS);
+                var newArray = [...current, obj];
+                localStorage.setItem("database", JSON.stringify(newArray));
+            }
+        }
+        function showHistory() {
+            var localS = localStorage.getItem("database");
+            if (localS != null) {
+                var content = "<ul>";
+                var obj = JSON.parse(localS);
+                for (var i = 0; i < obj.length; i++) {
+
+                    content += " <i class='fas fa-times ' id ='i" + i + "'  onclick = on('" + i + "')  ></i> <li class='act-number' id=" + i + ">" + obj[i].act + "</li>";
+                    content += "<li class='result-number' id=a" + i + ">" + obj[i].result + "</li>";
+                }
+                content += "</ul>";
+                document.getElementById("history").innerHTML = content;
+            }
+        }
+        function on(i) {
+            localStorage.setItem("database", JSON.stringify([i]));
+            document.getElementById(i).style.display = "none";
+            document.getElementById("a" + i).style.display = "none";
+            document.getElementById("i" + i).style.display = "none";
+            // document.getElementsByClassName("result-number'>" + obj[i].act + "").style.display = "none";
+        }
+        function key(event) {
+            var x = event.key;
+            var txt = document.getElementById('result').textContent;
+            
+            document.getElementById("result").innerHTML =  txt+x;
+        }
+       
+
+        init();
+        showHistory();
+    </script>
+</body>
+
+</html>

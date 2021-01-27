@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <p id="txt">
+            hello world
+        </p>
+        <p id="rm"> hello delete</p>
+        <p id="in"></p>
+        <select id="year" size="8">
+          </select>
+        <button onclick="on()">onclick
+        </button>
+        <p id="6">
+
+        </p>
+        <p id="7">
+
+        </p>
+    </div>
+    <script>
+        function on() {
+            var aloha = ["h1", "h2", "h3", "h4", "h5"];
+
+            document.getElementById("txt").style.backgroundColor = "red";
+            var txt = document.getElementById('txt').textContent;
+            var index = document.getElementById("in").innerHTML = txt;
+            alert(txt);
+            var removeElement = document.getElementById("rm");
+            removeElement.remove();
+            aloha.push("add");
+            for (var i = 0; i < aloha.length; i++) {
+                if (i == 4) {
+                    var a = aloha[i];
+                    document.getElementById("6").innerHTML = a;
+                }
+            }
+            document.getElementById("7").innerHTML = aloha;
+            var year1 = new Array();
+
+            var x = document.getElementById("year");
+            for (var j = 1800; j <= 2300; j++) {
+
+                var option = document.createElement("option");
+                option.text = j;
+                x.add(option);
+
+
+            }
+            // var newOp = document.createElement("option");
+            // var op =document.getElementById("year");
+            // op.setAttribute
+            var x = document.createElement("SELECT");
+            x.setAttribute("id", "mySelect");
+            document.body.appendChild(x);
+            for (var j = 1800; j <= 2300; j++) {
+
+                var option = document.createElement("option");
+                option.text = j;
+                x.add(option);
+
+
+            }
+            var z = document.createElement("option");
+            z.setAttribute("value", "volvocar");
+            var t = document.createTextNode("Volvo");
+            z.appendChild(t);
+            document.getElementById("mySelect").appendChild(z);
+
+
+        }
+    </script>
+
+</body>
+
+</html>

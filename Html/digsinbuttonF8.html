@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            top: 0;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .content {
+            margin-top: 300px;
+        }
+        
+        .btn--success {
+            background-color: #49ba02;
+        }
+        
+        .btn--warning {
+            background-color: orange;
+        }
+        
+        .btn--danger {
+            background-color: red;
+        }
+        
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            color: aliceblue;
+            padding: 12px 38px;
+            min-width: 100px;
+            max-width: 300px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: opacity 0.2s linear;
+        }
+        
+        .btn:hover {
+            padding: 15px 42px;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        
+        .btn--disable:hover {
+            opacity: 0.2;
+            background-color: #49ba02;
+        }
+        
+        .btn+.btn {
+            margin-left: 36px;
+        }
+        
+        .btn--disable {
+            opacity: 0.4 !important;
+            cursor: default;
+            padding: 12px 38px !important;
+        }
+    </style>
+    <div class="content">
+        <button class="btn btn--success btn--disable">Go To </button>
+        <button class="btn btn--warning">OK </button>
+        <button class="btn btn--danger">Try agian </button>
+    </div>
+</body>
+
+</html>

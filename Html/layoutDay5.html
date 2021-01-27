@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .main {
+            display: flex;
+        }
+        
+        .menu {
+            background-color: aqua;
+            width: 25%;
+            height: 600px;
+        }
+        
+        .content {
+            width: 75%;
+            height: 600px;
+            background-color: #f2f2f2;
+        }
+        
+        .search {
+            width: 100%;
+            border: 1px solid black;
+            height: 100px;
+        }
+        
+        .aaa {
+            display: flex;
+        }
+        
+        .row2 {
+            width: 25%;
+            background-color: blue;
+            height: 100px;
+        }
+        
+        .col1 {
+            margin: 20px;
+            width: 80%;
+            height: 50px;
+            background-color: brown;
+            display: inline-block;
+        }
+        
+        .bbb {
+            display: flex
+        }
+        
+        .col123 {
+            width: 75%;
+            height: 90px;
+            background-color: chartreuse;
+            align-content: center;
+            padding: 10px;
+        }
+        
+        .col234 {
+            width: 25%;
+            text-align: center;
+            height: 90px;
+            padding: 10px;
+            background-color: darkmagenta;
+        }
+        
+        .r13 {
+            width: 99%;
+            height: 0px;
+            background-color: yellow;
+        }
+        
+        .r23 {
+            width: 99%;
+            background-color: red;
+            height: 80px;
+        }
+    </style>
+    <!-- create div main -->
+    <div class="main">
+        <!-- create menu bar -->
+        <div class="menu">
+
+        </div>
+        <!-- tao noi dung o duoi -->
+        <div class="content">
+            <!-- tao thanh search -->
+            <div class="row search">
+            </div>
+            <!-- tao hang 2 -->
+            <div class="row aaa">
+                <div class="row2 col11">
+                    <div class="row2 col1 r12"></div>
+
+                </div>
+                <div class="row2 col2">
+                    <div class="row2 col1 r22"></div>
+
+                </div>
+                <div class="row2 col3">
+                    <div class="row2 col1 r32"></div>
+
+                </div>
+                <div class="row2 col4">
+                    <div class="row2 col1 r42"></div>
+                </div>
+            </div>
+            <!-- tao hang 3 -->
+            <div class="row bbb">
+                <div class="row3 col123">
+                    <div class="row3 col12 r13">
+                        <p>huynguyen </p>
+                    </div>
+                </div>
+                <div class="row3 col234">
+                    <div class="row3 col2 r23"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

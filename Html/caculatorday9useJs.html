@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Js/Caculator.js"></script>
+</head>
+
+<body>
+    <p id="txt" style="height: 30px; width: 100%; text-align: center; font-size: 50px;">
+
+    </p>
+    <table style="width:100%">
+
+
+        <tr>
+            <td>
+                <input type="button" value="0" onclick="pressNumber(0)">
+            </td>
+            <td>
+                <input type="button" value="1" onclick="pressNumber(1)">
+            </td>
+            <td> <input type="button" value="2" onclick="pressNumber(2)"></td>
+            <td> <input type="button" value="+" onclick="operator(1)"></td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="3" onclick="pressNumber(3)"></td>
+            <td> <input type="button" value="4" onclick="pressNumber(4)"></td>
+            <td> <input type="button" value="5" onclick="pressNumber(5)"></td>
+            <td> <input type="button" value="-" onclick="operator(2)"></td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="6" onclick="pressNumber(6)"></td>
+            <td> <input type="button" value="7" onclick="pressNumber(7)"></td>
+            <td> <input type="button" value="8" onclick="pressNumber(8)"></td>
+            <td> <input type="button" value="*" onclick="operator(3)"></td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="9" onclick="pressNumber(9)"></td>
+            <td> <input type="button" value="/" onclick="operator(4)"></td>
+            <td> <input type="button" value="=" onclick="result()"></td>
+           <td> <input type="button" value="clear" onclick="remo()"></td>
+        </tr>
+
+        <h1 id="memory"> </h1>
+    </table>
+    <input type="button" value="clear" onclick="()">
+    
+
+
+
+    <style>
+
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        tr {
+            cursor: pointer;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .modal-footer {
+            display: flex;
+            height: 200px;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+        
+        .btn {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        
+        .form-control {
+            text-align: center;
+        }
+    </style>
+    <form>
+
+        <h1>CRUD (Create, Read, Update, Delete)</h1>
+        <div class="form-control">
+            <div class="btn-group">
+                <button onclick="hindeBtn(23)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                   Add
+                </button>
+                <button onclick="hindeBtn(13)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Update
+                 </button>
+                <button type="button" onclick="hindeBtn(12)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete
+                 </button>
+            </div>
+        </div>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="body-tb"></tbody>
+            </table>
+        </div>
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <label>Name</label>
+                                <input id="name" />
+                            </div>
+                            <div class="row">
+                                <label>Status</label>
+                                <select id="status">
+                        <option value="todo">Todo</option>
+                        <option value="done">Done</option>
+                        <option value="cancel">Cancel</option>
+                    </select>
+                            </div>
+                            <div class="row">
+                                <label>Date</label>
+                                <input type="date" id="date" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="btnDelete" onclick="deleteI()">delete</button>
+                        <button type="button" class="btn btn-primary" id="btnUpdate" onclick="update()">update</button>
+                        <button type="button" class="btn btn-primary" id="btnAdd" onclick="add()">add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+<script>
+    var taskList = [];
+    var index = -1;
+    if (localStorage.getItem("database")) {
+        taskList = JSON.parse(localStorage.getItem("database"));
+    }
+    // PROMISE, AJAX, AXIOS, XMLHTTPREQUEST, LOCALSTORAGE
+    function add() {
+        var db = localStorage.getItem("database");
+        var dataItems = JSON.parse(db);
+        var task = getData();
+        var tep = 0;
+        console.log("đã đến đây:" + task.name);
+        for (var i = 0; i < dataItems.length; i++) {
+            if (task.name == dataItems[i].name) {
+                tep++;
+            }
+        }
+        if (tep == 0) {
+            taskList.push(task);
+            saveDB();
+            location.reload();
+        } else {
+            alert("đã có rồi")
+        }
+
+    }
+
+    function read() {
+        var db = localStorage.getItem("database");
+        if (db) {
+            var dataItems = JSON.parse(db);
+            var html = "";
+            for (var i = 0; i < dataItems.length; i++) {
+
+                html += "<tr data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='getIndex(" + i + ")'><td>" + dataItems[i].name + "</td><td>" +
+                    dataItems[i].status + "</td><td>" + dataItems[i].date + "</td></tr>";
+            }
+            document.
+            getElementById("body-tb").innerHTML = html;
+        }
+    }
+
+    function getIndex(ind) {
+        var db = localStorage.getItem("database");
+        var dataItems = JSON.parse(db);
+        inde = ind;
+
+        taskList[inde] = getData();
+
+        name1 = dataItems[inde].name;
+        status = dataItems[inde].status;
+        date = dataItems[inde].date;
+
+        console.log(name1);
+        document.getElementById('name').value = name1;
+        document.getElementById('status').value = status;
+        document.getElementById('date').value = date;
+    }
+
+    function saveDB() {
+        var current = localStorage.getItem("database");
+        if (current) {
+            current = [...taskList];
+            localStorage.setItem("database", JSON.stringify(current));
+        } else {
+            localStorage.setItem("database", JSON.stringify(taskList));
+        }
+        read();
+    }
+
+    function getData() {
+        return {
+            name: document.getElementById("name").value,
+            status: document.getElementById("status").value,
+            date: document.getElementById("date").value
+        };
+    }
+    read();
+
+    function update() {
+        if (index > -1) {
+            taskList[index] = getData();
+            saveDB(taskList);
+            read();
+            index = -1;
+        }
+    }
+
+    function deleteI() {
+        console.log("dã đên delete");
+        if (index > -1) {
+            taskList.splice(index, 1);
+            saveDB(taskList);
+            read();
+            index = -1;
+            location.reload();
+        }
+    }
+
+    // function hindeBtn(bl) {
+    //     if (bl == 12) {
+    //         document.getElementById('btnAdd').style.display = "none";
+    //         document.getElementById('btnUpdate').style.display = "none";
+    //         // document.getElementById('exampleModalLabel').innerText = "Delete";
+    //     } else if (bl == 13) {
+    //         document.getElementById('btnDelete').style.display = "none";
+    //         document.getElementById('btnAdd').style.display = "none";
+
+    //         // document.getElementById('exampleModalLabel').innerHTML = "Update";
+    //     } else if (bl == 23) {
+    //         document.getElementById('btnDelete').style.display = "none";
+    //         document.getElementById('btnUpdate').style.display = "none";
+
+    //         // document.getElementById('exampleModalLabel').innerHTML = "Add";
+    //     }
+    // }
+
+    // function blockEl() {
+    //     document.getElementById('btnAdd').style.display = "block";
+    //     document.getElementById('btnUpdate').style.display = "block";
+    //     document.getElementById('btnDelete').style.display = "block";
+    // }
+    // blockEl();
+</script>
+
+</html>

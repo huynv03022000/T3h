@@ -1,0 +1,150 @@
+.content {
+    margin: 0 auto;
+    margin-top: 1px;
+    width: 300px;
+    height: 550px;
+    margin: 50px 450px;
+    background-repeat: no-repeat;
+    background-image: cover;
+    border: 2px inset aliceblue;
+    margin: 50px auto;
+    border-radius: 15px;
+    /* animation-name: content;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out; */
+}
+
+@keyframes content {
+    0% {
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    25% {
+        margin-left: 8%;
+        margin-top: 50px;
+    }
+    50% {
+        margin-left: 17%;
+        margin-top: 50px;
+    }
+    75% {
+        margin-left: 26%;
+        margin-top: 50px;
+    }
+    100% {
+        margin-left: 34%;
+        margin-top: 50px;
+    }
+}
+
+body {
+    margin: 0 auto;
+    margin-top: 1px;
+    background-image: url(/Img/nature-background-31.jpg);
+    height: 700px;
+}
+
+.head {
+    text-align: center;
+    color: white;
+}
+
+.login {
+    text-align: center;
+}
+
+.login a {
+    font-size: 16px;
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+    color: aliceblue;
+    margin-left: 15px;
+}
+
+.login h2 {
+    display: inline;
+    margin-right: 25px;
+}
+
+.login h2:hover {
+    border-bottom: 1px solid wheat;
+    color: aqua;
+}
+
+::placeholder {
+    color: black;
+}
+
+#abc {
+    color: red;
+}
+
+.login input {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid bisque;
+    place-content: initial;
+    padding-left: 10px;
+    color: aliceblue;
+    color: black;
+    width: 230px;
+    height: 25px;
+}
+
+.sigin {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#abc {
+    margin-left: 100px;
+}
+
+.sigin h2 {
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    height: 24px;
+    color: antiquewhite;
+    background-color: #00cc00;
+    font-size: 12px;
+    padding-top: 12px;
+    display: inline-block;
+}
+
+.sigin p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login.h2 {
+    background-color: #00ff00;
+}
+
+.sigin h2:hover {
+    background-color: #00ff00;
+    font-size: 14px;
+    width: 255px;
+    height: 26px;
+}
+
+@media only screen and (max-width: 800px) {
+    .content {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .content {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

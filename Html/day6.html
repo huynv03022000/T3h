@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .row1 {
+            background-color: red;
+            height: 150px;
+        }
+        
+        .row2 {
+            display: flex;
+        }
+        
+        .row2-col1 {
+            background-color: blue;
+            width: 50%;
+            height: 300px;
+        }
+        
+        .row2-col2 {
+            height: 300px;
+            width: 50%;
+            margin-top: -15px;
+        }
+        
+        .row2-col2-row1 {
+            height: 150px;
+            background-color: rosybrown;
+        }
+        
+        .row2-col2-row2 {
+            background-color: orange;
+            height: 150px;
+        }
+        
+        .row3 {
+            display: flex;
+        }
+        
+        .row3-col1 {
+            width: 50%;
+            height: 150px;
+            background-color: chartreuse;
+            justify-content: center;
+        }
+        
+        .row3-col2 {
+            background-color: violet;
+            height: 150px;
+            width: 50%;
+        }
+        
+        @media (max-width: 576px) {
+            .row2 {
+                flex-direction: column-reverse;
+            }
+            .row3 {
+                /* flex word  là thuộc tính khi dung display flex mà vẫn muốn chiều dai tuyd chỉnh */
+                flex-wrap: wrap;
+            }
+            .row2-col2 {
+                width: 100%;
+            }
+            .row2-col1 {
+                width: 100%;
+            }
+            .row3-col1 {
+                width: 100%;
+            }
+            .row3-col2 {
+                width: 100%;
+            }
+        }
+        
+        @media (min-width: 576px) {
+            .row2 {
+                flex-direction: column-reverse;
+            }
+            .row2-col2 {
+                width: 100%;
+            }
+            .row2-col1 {
+                width: 100%;
+            }
+        }
+        
+        @media (min-width: 768px) {}
+        
+        @media (min-width: 992px) {
+            .row2 {
+                flex-direction: row;
+            }
+        }
+        
+        @media (min-width: 1200px) {}
+        
+        @media (min-width: 1400px) {}
+        
+        .in {
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+        }
+    </style>
+    <div class="content">
+        <div class="row1">
+        </div>
+        <div class="row2">
+            <div class="row2-col1">
+                <p id="123">hhahaha</p>
+            </div>
+            <div class="row2-col2">
+                <div class="row2-col2-row1">
+                    <p>aaaaaaaaaa</p>
+                </div>
+                <div class="row2-col2-row2">
+
+                </div>
+            </div>
+        </div>
+        <div class=" row3 ">
+            <div class="row3-col1">
+                <div class="in">
+
+                </div>
+            </div>
+            <div class="row3-col2">
+                <p>123</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        var txt = document.getElementById("123").textContent;
+        alert(txt);
+    </script>
+</body>
+
+</html>

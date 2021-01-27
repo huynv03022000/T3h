@@ -1,0 +1,167 @@
+h1 {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: #902ffa;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: -2s;
+    animation-iteration-count: 5;
+}
+
+@keyframes example {
+    from {
+        background-color: #902ffa;
+    }
+    to {
+        background-color: yellow;
+    }
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+.content {
+    width: 35%;
+    height: 500px;
+    border-radius: 20px;
+    border: 1px inset black;
+    background-color: #f2f2f2;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    margin-left: 33%;
+    margin-top: 50px;
+    animation-name: content;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes content {
+    0% {
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    /* 25% {
+        margin-left: 6%;
+        margin-top: 50px;
+    }
+    50% {
+        margin-left: 12%;
+        margin-top: 50px;
+    }
+    75% {
+        margin-left: 19%;
+        margin-top: 50px;
+    } */
+    /* 100% {
+        margin-left: 25%;
+        margin-top: 50px;
+    } */
+}
+
+input:hover {
+    background-color: aquamarine;
+}
+
+.content input {
+    display: inline;
+    margin: 7px 20px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: 1px outset white;
+    width: 250px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+#psw {
+    position: relative;
+}
+
+#eye {
+    position: absolute;
+    margin-left: -49px;
+    margin-top: 12px;
+    background-color: aliceblue;
+}
+
+.content i {
+    margin-left: 17%;
+}
+
+.inputformcheckbox input {
+    height: 20px;
+    width: 20px;
+    border: 1px solid #902ffa;
+    margin-left: 75px;
+    margin-top: 30px;
+}
+
+::placeholder {
+    color: #33d6ff;
+    opacity: 1;
+    /* Firefox */
+}
+
+form {
+    margin-top: 30px;
+}
+
+.content p {
+    display: inline;
+}
+
+.button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button input {
+    text-align: center;
+    background-color: #902ffa;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: aliceblue;
+    padding-bottom: 4px;
+}
+
+.button input:hover {
+    height: 43px;
+    width: 260px;
+    background-color: chartreuse;
+}
+
+p {
+    color: #902ffa;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+@media only screen and (max-width: 800px) {
+    .content {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .content {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
