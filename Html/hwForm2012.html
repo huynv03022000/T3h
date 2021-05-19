@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .main {
+            text-align: center;
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+            margin-left: 30%;
+        }
+        
+        .main-head {
+            display: flex;
+        }
+        
+        .main-content {
+            display: flex;
+        }
+        
+        .main-head-input input {
+            width: 90%;
+            margin-left: 45px;
+        }
+        
+        .main-content-input input {
+            width: 90%;
+            margin-left: 45px;
+        }
+        
+        .main-email input {
+            width: 80%;
+        }
+        
+        .main-end {
+            display: flex;
+        }
+        
+        .main-end-in {
+            margin-right: 200px;
+            margin-left: 50px;
+        }
+    </style>
+    <div class="main">
+        <form>
+            <h2>Form đăng kí</h2>
+            <div class="main-head">
+                <div class="main-head-input">
+                    <p>Họ </p>
+                    <input id="ho" placeholder="Enter Họ">
+                </div>
+                <div class="main-head-input">
+                    <p>Tên </p>
+                    <input id="ten" placeholder="Enter Tên">
+                </div>
+            </div>
+            <div class="main-email">
+                <p>Email</p>
+                <input id="email" placeholder="Enter Email">
+            </div>
+            <div class="main-content">
+                <div class="main-content-input">
+                    <p>Mật khẩu 8-16 số </p>
+                    <input id="mk" type="password" placeholder="Enter mật khẩu">
+                </div>
+                <div class="main-content-input">
+                    <p>nhập lại mật khẩu </p>
+                    <input id="rmk" type="password" placeholder="Enter mật khẩu">
+                </div>
+
+
+            </div>
+
+            <div class="main-end">
+                <div class="main-end-in left">
+                    <p>năm sinh </p>
+                    <select name="" id="namsinh">
+                       <option value="">năm sinh</option>
+                       <option value="1999">1999</option>
+                       <option value="2000">2000</option>
+                    </select>
+                    <p>Thành Phố</p>
+                    <select name="" id="tp">
+                       <option value="">Thành Phố</option>
+                       <option value="Hà Nội">hà nội</option>
+                    </select>
+                </div>
+                <div class="main-end-in right">
+                    <p>Giới tính</p>
+                    nam
+                    <input type="radio" name="gender" value="nu" id="nu"> nữ
+                    <input type="radio" name="gender" value="nam" id="nam">
+                </div>
+            </div>
+            <button onclick="re(); return false;">Đăng Kí</button>
+        </form>
+    </div>
+    <p id="display">
+
+    </p>
+    <script>
+        function re() {
+            var ho = document.getElementById('ho').value;
+            var ten = document.getElementById('ten').value;
+            var email = document.getElementById('email').value;
+            var mk = document.getElementById('mk').value;
+            var rmk = document.getElementById('rmk').value;
+            var gender = document.getElementsByName('gender').value;
+            var namsinh = document.getElementById('namsinh').value;
+            var tp = document.getElementById('tp').value;
+
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (ho.length <= 2 || ten.length <= 2) {
+                alert('ten va ho phai ten 2 ki tu');
+                return false;
+            } else if (!email.match(mailformat)) {
+                alert("You have entered an invalid email address!");
+                return false;
+            } else if (mk != rmk) {
+                alert("pass k dung");
+                return false;
+            } else {
+                document.getElementById('display').innerHTML =
+                    alert("thong tin ten :" + ho +
+                        " " + ten + " email :" + email + "   nam sinh :" +
+                        namsinh + " thanh pho : " +
+                        tp + "   gioi tinh" + gender);
+            }
+            // event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

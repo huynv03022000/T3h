@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var st = "abc    de   x   y zt";
+        var dao = st.split("");
+
+        var dao1 = st.split(/\s+/g);
+        result = "";
+        var index = 0;
+        var a = 1;
+        for (i = dao.length; i >= 0; i--) {
+            result += dao[i];
+
+            if (dao[i] == "a") {
+                index++;
+
+            }
+
+        }
+        var max = 0;
+        console.log(result);
+        console.log(index);
+        console.log(dao1.length);
+        var n = 0;
+        var a = 0;
+        var arr = [1, 4, 3, 5, 2, 7, 5, 9, 11, 33, 8, 3, 6];
+        // arr.sort();
+        var ar = [];
+        for (var i = 1; i < arr.length; i++) {
+            for (var j = 0; j < i; j++) {
+                if (arr[j] > arr[i]) {
+                    n = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = n;
+
+                }
+
+            }
+            console.log("i" + i, arr);
+
+        }
+
+        var p = arr.sort();
+        console.log(ar[length - 3]);
+        console.log("aaaaaaaaaaaa" + arr[length - 3]);
+
+        console.log(max);
+        console.log(n);
+
+
+
+
+        //q2
+    </script>
+</body>
+
+</html>

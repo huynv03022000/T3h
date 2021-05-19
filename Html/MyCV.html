@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
@@ -32,8 +29,7 @@
                     </a>
                 </div>
                 <div class="imgcrile">
-                    <img src="../Img/118806951_2799144087030457_1866963405411381091_o.jpg" alt="" width="150px"
-                        height="150px">
+                    <img src="../Img/118806951_2799144087030457_1866963405411381091_o.jpg" alt="" width="200px" height="200px">
                 </div>
                 <div class="logoAndCoppy">
                     <h2>HuyNV</h2>
@@ -79,11 +75,11 @@
                         <div class="nut--select" id="nut" style="display: none;">
                             <ul class="select-li">
                                 <li class="select-li-welcome ">Welcome</li>
-                                <li class="select-li-about ">About Me</li>
-                                <li class="select-li-skills ">Skills</li>
-                                <li class="select-li-resume ">Education</li>
-                                <li class="select-li-project ">Project</li>
-                                <li class="select-li-contact ">Contact</li>
+                                <li class="select-li-about " onclick="scrollAboutMe(1)">About Me</li>
+                                <li class="select-li-skills " onclick="scrollAboutMe(4)">Skills</li>
+                                <li class="select-li-resume " onclick="scrollAboutMe(2)">Education</li>
+                                <li class="select-li-project " onclick="scrollAboutMe(3)">Expertise</li>
+                                <li class="select-li-contact " onclick="scrollAboutMe(5)">Contact</li>
                             </ul>
                         </div>
                     </div>
@@ -93,20 +89,20 @@
                         <!-- Brand/logo -->
                         <!-- Links -->
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link a" href="#">Contact </a>
+                            <li class="nav-item" onclick="scrollAboutMe(1)">
+                                <a class="nav-link a">About Me</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link a" href="#">About Me </a>
+                            <li class="nav-item" onclick="scrollAboutMe(2)">
+                                <a class="nav-link a">Education </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link a" href="#">Skills</a>
+                            <li class="nav-item" onclick="scrollAboutMe(3)">
+                                <a class="nav-link a">Expertise</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link a" href="#">Education</a>
+                            <li class="nav-item" onclick="scrollAboutMe(4)">
+                                <a class="nav-link a">Skills</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link a" href="#">Project</a>
+                            <li class="nav-item" onclick="scrollAboutMe(5)">
+                                <a class="nav-link a">Contact</a>
                             </li>
                         </ul>
                     </nav>
@@ -117,116 +113,111 @@
         <div class="end"> </div>
     </div>
     <div class="container-fluid">
-        <div class="aboutme row odd ">
-            <div class="col-md-3 about-left odd-left  ">
-                <div class="aboutme-gt odd-gt">
-                    <h2>ABOUT ME</h2>
-                    <p>A little about me</p>
+        <div class="row">
+            <div class="aboutme row odd ">
+                <div class="col-md-4 about-left odd-left  ">
+                    <div class="aboutme-gt odd-gt">
+                        <h2>ABOUT ME</h2>
+                        <p>A little about me</p>
+                    </div>
+                </div>
+                <div class="col-md-8 about-right odd-right">
+                    <div class="about-right-content">
+                        <p>I am a sociable, cheerful, highly responsible at work. Coming to the company, I hope to be able to become a part of here, contribute my value to the development of the company.
+                        </p>
+                        <p>Seeking work of a Software Engineer where I can improve myself and use the knowledge gained in the process of learning at school about software engineering for work.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-9 about-right odd-right">
-                <div class="about-right-content">
-                    <p>I am a sociable, cheerful, highly responsible at work. Coming to the company, I hope to be able
-                        to become a part of here, contribute my value to the development of the company.
-                    </p>
-                    <p>Seeking work of a Software Engineer where I can improve myself and use the knowledge gained in
-                        the process of learning at school about software engineering for work.</p>
+            <div class=" education row even">
+                <div class="col-md-4 education-left even-left">
+                    <div class="education-gt even-gt  ">
+                        <h2>EDUCATION</h2>
+                        <p>I learnt a lot in my life</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class=" education row even">
-            <div class="col-md-3 education-left even-left">
-                <div class="education-gt even-gt  ">
-                    <h2>EDUCATION</h2>
-                    <p>I learnt a lot in my life</p>
-                </div>
-            </div>
-            <div class="col-md-9 education-right  even-right">
-                <div class="education-content-left">
-                    <p>From 2015</p>
-                    <p>To 2018</p>
-                    <br>
+                <div class="col-md-8 education-right  even-right">
+                    <div class="education-content-left">
+                        <p>From 2015</p>
+                        <p>To 2018</p>
+                        <br>
 
-                    <br>
-                    <p>From 2018</p>
-                    <p>studying....</p>
+                        <br>
+                        <p>From 2018</p>
+                        <p>studying....</p>
 
-                </div>
-                <div class="education-content-right">
-                    <p>Binh Minh High School</p>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <p>SOFTWARE ENGINEER <br> FPT University
-                    </p>
-                </div>
-                <div class="education-content-detail">
-                    <a
-                        href="http://www.binhminh.edu.vn/?fbclid=IwAR3fNALd_mzysCRKZRayFEZWEcKdHxezZ6kiId4LZBDYo1STHHVfzCcHmWE">Binhminh.edu</a>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <a href="https://daihoc.fpt.edu.vn/">
+                    </div>
+                    <div class="education-content-right">
+                        <p>Binh Minh High School</p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>SOFTWARE ENGINEER <br> FPT University
+                        </p>
+                    </div>
+                    <div class="education-content-detail">
+                        <a href="http://www.binhminh.edu.vn/?fbclid=IwAR3fNALd_mzysCRKZRayFEZWEcKdHxezZ6kiId4LZBDYo1STHHVfzCcHmWE">Binhminh.edu</a>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="https://daihoc.fpt.edu.vn/">
                         daihocfpt.edu.vn</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="experience row  odd">
-            <div class="col-md-3 experience-left odd-left">
-                <div class="experience-gt odd-gt">
-                    <h2>EXPERTISE</h2>
-                    <p>What I can do</p>
+            <div class="experience row odd">
+                <div class="col-md-4 experience-left odd-left">
+                    <div class="experience-gt odd-gt">
+                        <h2>EXPERTISE</h2>
+                        <p>What I can do</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9 experience-right odd-right">
-                <div class="experience-right-content row">
-                    <div class="col-md-6">
-                        <div class="mb-c">
-                            <div class="icon">
-                                <svg class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <div class="col-md-8 experience-right odd-right">
+                    <div class="experience-right-content row">
+                        <div class="col-md-6">
+                            <div class="mb-c">
+                                <div class="icon">
+                                    <svg class="bi bi-code-slash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5
                         .5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0
                          0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.
                          5 0 0 0-.708 0zm-.999-3.124a.5.5 0 0 1 .33.625l-4 13a.5.5 0 0 1-.955-.294l4-13a.5.5 0 0 1 .625-.33z"></path>
                                 </svg>
-                            </div>
-                            <div class="description ex-content">
-                                <h4 class="title mb-2">FRONT-END DEVELOPER</h4>
-                                <p>
-                                    HTML/CSS, Bootstrap, JavaScript <br>AngularJS, VueJS
-                                </p>
+                                </div>
+                                <div class="description ex-content">
+                                    <h4 class="title mb-2">FRONT-END DEVELOPER</h4>
+                                    <p>
+                                        HTML/CSS, Bootstrap, JavaScript <br>AngularJS, VueJS
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-c">
-                            <div class="icon">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-braces"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <div class="col-md-6">
+                            <div class="mb-c">
+                                <div class="icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-braces" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z">
                                     </path>
                                 </svg>
-                            </div>
-                            <div class="description ex-content">
-                                <h4 class="title mb-2">BACK-END DEVELOPER</h4>
-                                <p>
-                                    Java OOP <br>Spring Framework
-                                </p>
+                                </div>
+                                <div class="description ex-content">
+                                    <h4 class="title mb-2">BACK-END DEVELOPER</h4>
+                                    <p>
+                                        Java OOP <br>Spring Framework
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-c">
-                            <div class="icon">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <div class="col-md-6">
+                            <div class="mb-c">
+                                <div class="icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M12.002 4h-10a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10z">
                                     </path>
@@ -237,109 +228,128 @@
                                         d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z">
                                     </path>
                                 </svg>
-                            </div>
-                            <div class="description ex-content">
-                                <h4 class="title mb-2">WEB DESIGN</h4>
-                                <p>
-                                    HTML/CSS <br>Adobe XD
-                                </p>
+                                </div>
+                                <div class="description ex-content">
+                                    <h4 class="title mb-2">WEB DESIGN</h4>
+                                    <p>
+                                        HTML/CSS <br>Adobe XD
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class=" soft row even ">
-            <div class="col-md-3 soft-left even-left  ">
-                <div class="soft-gt even-gt">
-                    <h2>SOFT SKILLS</h2>
-                    <p>A little about me</p>
+            <div class=" soft row even ">
+                <div class="col-md-4 soft-left even-left  ">
+                    <div class="soft-gt even-gt">
+                        <h2>SOFT SKILLS</h2>
+                        <p>A little about me</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9 soft-right even-right">
-                <div class="soft-right-content">
-                    <p>I am a sociable, cheerful, highly responsible at work. Coming to the company, I hope to be able
-                        to become a part of here, contribute my value to the development of the company.
+                <div class="col-md-8 soft-right even-right">
+                    <div class="soft-right-content">
+                        <p>I am a sociable, cheerful, highly responsible at work. Coming to the company, I hope to be able to become a part of here, contribute my value to the development of the company.
 
-                    </p>
-                    <p>Seeking work of a Software Engineer where I can improve myself and use the knowledge gained in
-                        the process of learning at school about software engineering for work.</p>
+                        </p>
+                        <p>Seeking work of a Software Engineer where I can improve myself and use the knowledge gained in the process of learning at school about software engineering for work.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="contact row odd ">
-            <!-- footer-box-->
-            <div class="footer-box col-md-3 fl-wrap odd-left">
-                <div class="footer-header  odd-gt fl-wrap-1">
-                    <h2>Contacts </h2>
-                    <p>If you want to be consultant,<br> contact me right now. <br> Or send email to me.</p>
-                    <!-- <div class="subcribe-form fl-wrap">
+            <div class="contact row odd ">
+                <!-- footer-box-->
+                <div class="footer-box col-md-4 fl-wrap odd-left">
+                    <div class="footer-header  odd-gt fl-wrap-1">
+                        <h2>Contacts </h2>
+                        <p>If you want to be consultant,<br> contact me right now. <br> Or send email to me.</p>
+                        <!-- <div class="subcribe-form fl-wrap">
                         <form id="subscribe" class="fl-wrap">
                             <input class="enteremail" name="email" id="subscribe-email" placeholder="email" spellcheck="false" type="text">
                             <button type="submit" id="subscribe-button" class="subscribe-button"><i class="fal fa-paper-plane"></i> Send </button>
                             <label for="subscribe-email" class="subscribe-message"></label>
                         </form>
                     </div>-->
-                    <!-- footer-contacts -->
+                        <!-- footer-contacts -->
 
-                    <!-- footer end -->
+                        <!-- footer end -->
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9 contact-right odd-right">
-                <div class="footer-contacts fl-wrap ">
-                    <ul>
-                        <li><i class="fas fa-phone"></i><span>Phone :</span><a href="#">+84 943189438</a></li>
-                        <li><i class="fas fa-envelope"></i><span>Email :</span><a href="#">huy465773@gmail.com</a></li>
-                        <li><i class="fas fa-map-marker"></i><span>Address :</span><a href="#">
+                <div class="col-md-8 contact-right odd-right">
+                    <div class="footer-contacts fl-wrap ">
+                        <ul>
+                            <li><i class="fas fa-phone"></i><span>Phone :</span><a href="#">+84 943189438</a></li>
+                            <li><i class="fas fa-envelope"></i><span>Email :</span><a href="#">huy465773@gmail.com</a></li>
+                            <li><i class="fas fa-map-marker"></i><span>Address :</span><a href="#">
                                 HÀ NỘI, VN</a></li>
-                        <li><i class="fas fa-clock"></i><span>Working Time :</span><a href="#">5:00PM - 6:00AM</a></li>
-                    </ul>
-                </div>
-                <div class="w3-col m6">
-                    <form action="/action_page.php" target="_blank">
+                            <li><i class="fas fa-clock"></i><span>Working Time :</span><a href="#">5:00PM - 6:00AM</a></li>
+                        </ul>
+                    </div>
+                    <div class="w3-col m6">
+                        <form action="/action_page.php" target="_blank">
 
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required="" name="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Email" required="" name="Email">
-                        </div>
-                        <input class="w3-input w3-border" type="text" placeholder="Message" required="" name="Message">
-                        <br>
-                        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
-                    </form>
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Name" required="" name="Name">
+                            </div>
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Email" required="" name="Email">
+                            </div>
+                            <input class="w3-input w3-border" type="text" placeholder="Message" required="" name="Message">
+                            <br>
+                            <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <!-- footer-box end-->
-        </div>
-    </div>
-    <footer>
-        <div class="subfooter fl-wrap">
-            <div class="container">
-                <!-- policy-box-->
-                <div class="policy-box">
-                    <span>Designed by Huy Nguyen Van/ © SOLONICK 2020 / All rights reserved.</span>
-                </div>
-                <!-- policy-box end-->
+                <!-- footer-box end-->
             </div>
         </div>
-    </footer>
-    <script>
-        function hidemenu() {
-            var nav = document.getElementById('left').style.display;
-            var temp = false;
-            if (document.getElementById('nut').style.display == "none") {
-                document.getElementById('nut').style.display = "block";
-                // document.getElementById("icon").classList.toggle("far fa-times-circle");
-                // document.getElementById('nut').style.filter = " blur(10px)";
-                temp = true;
-            } else {
-                document.getElementById('nut').style.display = "none";
-                // document.getElementById('icon').classList.toggle("fas fa-bars");
-                temp = false
+        <footer>
+            <div class="subfooter fl-wrap">
+                <div class="container">
+                    <!-- policy-box-->
+                    <div class="policy-box">
+                        <span>Designed by Huy Nguyen Van/ © SOLONICK 2020 / All rights reserved.</span>
+                    </div>
+                    <!-- policy-box end-->
+                </div>
+            </div>
+        </footer>
+        <li style="display: none;" onclick="scrollWin()">Click me to scroll horizontally!</li><br><br>
+        <script>
+            function scrollAboutMe(number) {
+                if (number == 1) {
+                    window.scrollTo(0, 500);
+                }
+                if (number == 2) {
+                    window.scrollTo(0, 800);
+                }
+                if (number == 3) {
+                    window.scrollTo(0, 1200);
+                }
+                if (number == 4) {
+                    window.scrollTo(0, 1550);
+                }
+                if (number == 5) {
+                    window.scrollTo(0, 1850);
+                }
             }
-        }
-    </script>
+
+
+
+            function hidemenu() {
+                var nav = document.getElementById('left').style.display;
+                var temp = false;
+                if (document.getElementById('nut').style.display == "none") {
+                    document.getElementById('nut').style.display = "block";
+                    // document.getElementById("icon").classList.toggle("far fa-times-circle");
+                    // document.getElementById('nut').style.filter = " blur(10px)";
+                    temp = true;
+                } else {
+                    document.getElementById('nut').style.display = "none";
+                    // document.getElementById('icon').classList.toggle("fas fa-bars");
+                    temp = false
+                }
+            }
+        </script>
 </body>
 
 </html>

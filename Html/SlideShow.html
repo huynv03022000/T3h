@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .main {
+            height: 500px;
+            background-color: #CCCC;
+            background-image: url("../Img/118806951_2799144087030457_1866963405411381091_o.jpg");
+        }
+        
+        .main-icon {
+            padding-top: 150px;
+            height: 200px;
+            width: 100%;
+            display: flex;
+        }
+        
+        .main-icon-left {
+            width: 50%;
+        }
+        
+        .main-icon-right {
+            width: 50%;
+            justify-content: right;
+            /* float: right; */
+        }
+        
+        .main-icon-left i {
+            justify-content: left;
+            /* float: left; */
+        }
+        
+        .main-icon-right i {
+            float: right;
+        }
+        
+        .button {
+            margin-left: 45%;
+            display: flex;
+        }
+        
+        .btn {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        
+        .button-1 {
+            background-color: red;
+        }
+    </style>
+    <div class="container main" id="main">
+        <div class="number">
+            <p id="number"> 1/4</p>
+        </div>
+        <div class="main-icon">
+            <div class="main-icon-left">
+                <i class="fas fa-chevron-left" onclick="changeImg('left')"></i>
+            </div>
+            <div class="main-icon-right">
+                <i class="fas fa-chevron-right" onclick="changeImg('right')"></i>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="button">
+        <div class="button-1 btn" id="button-1" onclick="changeImg('one')"></div>
+        <div class="button-2 btn" id="button-2" onclick="changeImg('two')"></div>
+        <div class="button-3 btn" id="button-3" onclick="changeImg('three')"></div>
+        <div class="button-4 btn" id="button-4" onclick="changeImg('for')"></div>
+    </div>
+
+
+    <script>
+        var number = 1;
+
+        function changeImg(process) {
+            var arr = document.getElementsByClassName('btn');
+
+            for (let index = 0; index < arr.length; index++) {
+
+
+            }
+            if (process == 'right') {
+                number += 1;
+
+            }
+            if (process == 'left') {
+                number = number - 1;
+            }
+            if (number == 5) {
+                number = 1;
+            }
+            if (number == -1) {
+                number = 4;
+            }
+            if (number == 1 || process == 'one') {
+                document.getElementById('main').style.backgroundImage = "url('../Img/118806951_2799144087030457_1866963405411381091_o.jpg')";
+                document.getElementById('number').innerHTML = "1/4";
+                document.getElementById('button-1').style.backgroundColor = "red";
+                document.getElementById('button-2').style.backgroundColor = "black";
+                document.getElementById('button-3').style.backgroundColor = "black";
+                document.getElementById('button-4').style.backgroundColor = "black";
+                number = 1;
+            }
+            if (number == 2 || process == 'two') {
+                document.getElementById('main').style.backgroundImage = "url('../Img/abstract-blue-geometric-shapes-background_1035-17545.jpg')";
+                document.getElementById('number').innerHTML = "2/4";
+                document.getElementById('button-2').style.backgroundColor = "red";
+                document.getElementById('button-1').style.backgroundColor = "black";
+                document.getElementById('button-3').style.backgroundColor = "black";
+                document.getElementById('button-4').style.backgroundColor = "black";
+                number = 2;
+            }
+            if (number == 3 || process == 'three') {
+                document.getElementById('main').style.backgroundImage = "url('../Img/sunny-defocused-green-nature-background-abstract-bokeh-effect-es-element-your-design_211682-265.jpg')";
+                document.getElementById('number').innerHTML = "3/4"
+                document.getElementById('button-3').style.backgroundColor = "red";
+                document.getElementById('button-2').style.backgroundColor = "black";
+                document.getElementById('button-1').style.backgroundColor = "black";
+                document.getElementById('button-4').style.backgroundColor = "black";
+                number = 3;
+            }
+            if (number == 4 || process == 'for') {
+                document.getElementById('main').style.backgroundImage = "url('../Img/png-clipart-brand-logo-front-end-web-development-front-and-back-ends-others-cdr-angle.png')";
+                document.getElementById('number').innerHTML = "4/4";
+                document.getElementById('button-4').style.backgroundColor = "red";
+                document.getElementById('button-2').style.backgroundColor = "black";
+                document.getElementById('button-3').style.backgroundColor = "black";
+                document.getElementById('button-1').style.backgroundColor = "black";
+                number = 4;
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

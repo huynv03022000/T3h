@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+
+    <input type="text" id="num1" placeholder="Enter number one">
+    <input type="text" id="num2" placeholder="enter number two">
+    <div class="cal" style="display: flex;">
+        <button onclick="cal('+')" value="+">+</button>
+        <button onclick="cal('-')" value="-">-</button>
+        <button onclick="cal('*')" value="*">*</button>
+        <button onclick="cal('/')" value="/">/</button>
+    </div>
+    <span id="result">
+     </span>
+    <!-- <form action="">
+        <div class="main" style="border-radius: 2px; border: 2px solid black;">
+            <div class=" col-sm-6" style="display: flex;">
+                <P>Họ</P>
+                <input type="text" id="ho" placeholder="Nhập Họ">
+                <P>Tên</P>
+                <input type="text" id="ten" placeholder="Nhậ Tên ">
+            </div>
+            <div class=" col-sm-6">
+                <P>Email</P>
+                <input type="text" placeholder="Nhập Email">
+            </div>
+        </div>
+    </form> -->
+    <script>
+        function cal(oprator) {
+            var result = 0;
+            var number1 = parseFloat(document.getElementById("num1").value);
+            var number2 = parseFloat(document.getElementById("num2").value);
+            // var number3 = document.getElementById("num3").value;
+            if (!isNaN(number1) && !isNaN(number2)) {
+                if (oprator == '+') {
+                    result = number1 + number2;
+                } else if (oprator == '-') {
+                    result = number1 - number2;
+                } else if (oprator == '*') {
+                    result = number1 * number2;
+                } else if (oprator == '/') {
+                    result = number1 / number2;
+                }
+                document.getElementById('result').innerHTML = result;
+            } else {
+                alert("enter number");
+            }
+        }
+    </script>
+</body>
+
+</html>

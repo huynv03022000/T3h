@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <form action="/action_page.php"> -->
+    <label for="birthdaytime">
+        set the alarm (date and time):</label>
+    <input type="time" id="appt" name="appt">
+    <input type="submit" onclick="my()" value="setting">
+    <button onclick="pauseAudio()" type="button">Pause</button>
+    <audio id="myAudio">
+        <!-- <source src="horse.ogg" type="audio/ogg"> -->
+        <source src="../Audio/horse.mp3" type="audio/mpeg">
+      
+      </audio>
+
+    <!-- </form> -->
+    <script>
+        var x = document.getElementById("myAudio");
+
+        function my() {
+            myVar = setInterval(setting, 1000);
+        }
+
+        function setting() {
+            var date = document.getElementById('appt').value;
+            var res = date.split(":");
+            var current = new Date();
+            if (res[0] == current.getHours() && res[1] == current.getMinutes()) {
+                // alert("aaaaaaaaaaaaaaaaaa");
+                x.play();
+            }
+        }
+        setting();
+
+        function pauseAudio() {
+            x.pause();
+        }
+    </script>
+
+</body>
+
+</html>

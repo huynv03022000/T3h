@@ -22,8 +22,8 @@
     position: absolute;
     z-index: 1;
     animation-name: img;
-    animation-duration: 12s;
-    animation-delay: 2s;
+    animation-duration: 8s;
+    animation-delay: 0s;
     right: 0;
     animation-iteration-count: infinite;
 }
@@ -201,7 +201,7 @@
     padding-bottom: 17px;
     margin-top: 20px;
     animation-name: example;
-    animation-duration: 8s;
+    animation-duration: 2s;
     animation-timing-function: linear;
     position: relative;
 }

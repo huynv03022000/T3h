@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .content {
+            color: blue;
+            background-image: url("/Img/backg.jpg");
+            background-repeat: no-repeat, repeat;
+            width: 100%;
+            max-height: 660px;
+            display: none;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 99999;
+            animation-name: example;
+            position: absolute;
+            animation-duration: 4s;
+        }
+        
+        @keyframes example {
+            from {
+                background-color: red;
+            }
+            to {
+                background-color: yellow;
+            }
+        }
+    </style>
+    <button onclick="myFunction()">CheckOut</button>
+
+    <div class="content" id="panel">
+        <form method="POST" action="checkout">
+            Enter name
+            <input type="text">
+
+        </form>
+
+    </div>
+    <script>
+        function myFunction() {
+            document.getElementById("panel").style.display = "block";
+            document.getElementsByClassName("content").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
